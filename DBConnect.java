@@ -4,21 +4,21 @@ import java.sql.*;
 
 public class DBConnect {
 
-	private Connection con; // µ¥ÀÌÅÍº£ÀÌ½º¿Í ÀÚ¹ÙÀÇ ¿¬°áÀ» °ü¸®ÇÏ´Â connection °´Ã¼
-	private Statement stmt; // µ¥ÀÌÅÍº£ÀÌ½º¿¡ Äõ¸®¸¦ º¸³»±â À§ÇØ ÇÊ¿äÇÑ °´Ã¼
+	private Connection con; // ë°ì´í„°ë² ì´ìŠ¤ì™€ ìë°”ì˜ ì—°ê²°ì„ ê´€ë¦¬í•˜ëŠ” connection ê°ì²´
+	private Statement stmt; // ë°ì´í„°ë² ì´ìŠ¤ì— ì¿¼ë¦¬ë¥¼ ë³´ë‚´ê¸° ìœ„í•´ í•„ìš”í•œ ê°ì²´
 
 	private String url = "jdbc:oracle:thin:@localhost:1521:orcl"; 
-	// oraclÅøÀ» ÀÌ¿ëÇÑ jdbc, localhost:1521 = ¿À¶óÅ¬ Æ÷Æ®¹øÈ£, orcl =
-	private String ID = "hr_hongsam"; // »ç¿ëÀÚÀÌ¸§,id
-	private String PW = "asd1861511"; // ÆĞ½º¿öµå
+	// oraclíˆ´ì„ ì´ìš©í•œ jdbc, localhost:1521 = ì˜¤ë¼í´ í¬íŠ¸ë²ˆí˜¸, orcl =
+	private String ID = "oracle_id"; // ì‚¬ìš©ìì´ë¦„,id
+	private String PW = "password"; // íŒ¨ìŠ¤ì›Œë“œ
 
 	public DBConnect() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // JDBC Driver Loading
-			con = DriverManager.getConnection(url, ID, PW); // Connect È®µæ
-			stmt = con.createStatement(); // ¸í·É½ÇÇàÀ» À§ÇÑ Statement È¹µæ
+			con = DriverManager.getConnection(url, ID, PW); // Connect í™•ë“
+			stmt = con.createStatement(); // ëª…ë ¹ì‹¤í–‰ì„ ìœ„í•œ Statement íšë“
 		} catch (Exception ex) {
-			System.err.println(ex); // ¿À·ù½Ã
+			System.err.println(ex); // ì˜¤ë¥˜ì‹œ
 		}
 	}
 
